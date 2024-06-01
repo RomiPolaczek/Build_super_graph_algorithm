@@ -3,9 +3,10 @@
 #include "superGraph.h"
 
 int main() {
-    graph g;
+    Graph g;
     g.BuildDirectedGraph();
-    transposedGraph gTransposed(g);
+    TransposedGraph gTransposed(g);
     SuperGraph superG;
-    superG.Sarir_Kosaraju_algorithm(g);
+    superG.Sarir_Kosaraju_Algorithm(g);
+    superG.PrintSuperGraph();
 }

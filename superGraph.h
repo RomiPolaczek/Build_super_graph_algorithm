@@ -1,13 +1,16 @@
 #ifndef SUPERGRAPH_H
 #define SUPERGRAPH_H
 #include "transposedGraph.h"
+#include "graph.h"
+#include <unordered_map>
 
-
-class SuperGraph : public graph{
+class SuperGraph : public Graph{
     std::list<std::list<int>> superGAdjList;
+
 public:
-    void Sarir_Kosaraju_algorithm(graph origin);
+    void Sarir_Kosaraju_Algorithm(Graph origin);
+    void BuildSuperGraph(std::map<int,std::list<int>> origin);
+    void PrintSuperGraph();
 };
 
-
-#endif SUPERGRAPH_H
+#endif

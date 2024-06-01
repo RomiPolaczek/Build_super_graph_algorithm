@@ -2,10 +2,17 @@
 #define TRANSPOSEDGRAPH_H
 #include "graph.h"
 
-class transposedGraph : public graph{
+class TransposedGraph : public Graph{
+    std::list<int> vertexOrder;
+    std::map<int,std::list<int>> dfsGraph;
+
 public:
-    transposedGraph(const graph& g);
+    TransposedGraph(const Graph& g);
+    void DFS();
+    void SetEndList(std::list<int> list);
+    void Visit(int u, int currRoot);
+    std::map<int,std::list<int>> GetDFSGraph();
 };
 
 
-#endif TRANSPOSEDGRAPH_H
+#endif
