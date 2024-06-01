@@ -7,8 +7,7 @@ void Graph::SetNumOfVertices()
     std::cin >> num;
     if(num <0)
     {
-        std::cout << "Invalid input";
-        std::exit(1);
+        throw std::invalid_argument("Invalid input");
     }
     else
         numOfVertices=num;
@@ -21,8 +20,7 @@ void Graph::SetNumOfEdges()
     std::cin >> num;
     if(num < 0)
     {
-        std::cout << "Invalid input";
-        std::exit(1);
+        throw std::invalid_argument("Invalid input");
     }
     else
         numOfEdges=num;
@@ -101,8 +99,7 @@ void Graph::CheckIfValidEdge(int u, int v)
 {
     if(u > numOfVertices || v > numOfVertices || v == u || u <= 0 || v <= 0)
     {
-        std::cout << "Invalid input";
-        std::exit(1);
+        throw std::invalid_argument("Invalid input");
     }
 }
 
